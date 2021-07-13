@@ -1,1 +1,83 @@
 @import "global";
+
+/*=============================
+utility classes applicable for all device
+        ================================*/
+
+body{
+    .hide-mobile{
+        display: none;
+    }
+    .container{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    //this flow class help us to margin the direct child except first child
+    .flow >*+*{
+        margin-top: 1em !important;
+    }
+}
+
+/*========================
+starting with mobile first development
+            ============================*/
+
+body{
+    .logo{
+        text-align: left;
+    }
+    .hero{
+
+        .hero-sub-info{
+            display: flex;
+            font-size: 14px;
+            font-weight: 900;
+            transform: translate(-1.6em,1em);
+        }
+
+        .hero-title{
+            text-align: left;
+            line-height: 1.3em;
+            margin-bottom: 1em;
+        }
+
+        .main-info{
+            text-align: left;
+            line-height: 1.4em;
+            margin-bottom: 2.5em;
+        }
+        
+
+    /*==========
+    hero section btn style
+                ==========*/
+        .hero-btn{
+            display: grid;
+
+            .hero-cta{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 100%;
+                cursor: pointer; 
+                padding: .1em .75em; 
+                border: 1px solid hsl(0, 59%, 55%);
+    
+                p{ 
+                    font-size: 13px;
+                    font-weight: 900;
+                }
+            }
+
+            .hero-cta-talk{
+                color: white;
+            }
+            .hero-cta-work{
+                background-color: var(--secondery-color,black);
+            }
+            
+        }
+    }
+}
+

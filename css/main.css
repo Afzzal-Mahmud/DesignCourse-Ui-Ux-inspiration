@@ -1,1 +1,132 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+:root {
+  --background-color:hsl(43, 90%, 94%);
+  --primary-color:#DC4E4D;
+  --secondery-color:#EAE5D2;
+  --dark:hsl(43, 90%, 3%);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background-color, #e5ffe7);
+}
+
+body ul {
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
+  color: var(--dark, black);
+}
+
+body .serif {
+  font-family: serif, Arial, Helvetica;
+}
+
+body .sans-serif {
+  font-family: sans-serif, Arial, Helvetica;
+}
+
+body .primary-color, body .active {
+  color: var(--primary-color);
+}
+
+body .primary-background {
+  background-color: var(--primary-color);
+}
+
+body #icon {
+  width: 25px;
+}
+
+/*=============================
+utility classes applicable for all device
+        ================================*/
+body .hide-mobile {
+  display: none;
+}
+
+body .container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body .flow > * + * {
+  margin-top: 1em !important;
+}
+
+/*========================
+starting with mobile first development
+            ============================*/
+body .logo {
+  text-align: left;
+}
+
+body .hero {
+  /*==========
+    hero section btn style
+                ==========*/
+}
+
+body .hero .hero-sub-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  font-weight: 900;
+  -webkit-transform: translate(-1.6em, 1em);
+          transform: translate(-1.6em, 1em);
+}
+
+body .hero .hero-title {
+  text-align: left;
+  line-height: 1.3em;
+  margin-bottom: 1em;
+}
+
+body .hero .main-info {
+  text-align: left;
+  line-height: 1.4em;
+  margin-bottom: 2.5em;
+}
+
+body .hero .hero-btn {
+  display: -ms-grid;
+  display: grid;
+}
+
+body .hero .hero-btn .hero-cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  cursor: pointer;
+  padding: .1em .75em;
+  border: 1px solid #d04949;
+}
+
+body .hero .hero-btn .hero-cta p {
+  font-size: 13px;
+  font-weight: 900;
+}
+
+body .hero .hero-btn .hero-cta-talk {
+  color: white;
+}
+
+body .hero .hero-btn .hero-cta-work {
+  background-color: var(--secondery-color, black);
+}
+/*# sourceMappingURL=main.css.map */
