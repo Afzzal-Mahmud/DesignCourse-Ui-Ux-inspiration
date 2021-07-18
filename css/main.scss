@@ -5,9 +5,9 @@ utility classes applicable for all device
         ================================*/
 
 body{
-    .hide-mobile{
-        display: none;
-    }
+    // .hide-mobile{
+    //     display: none;
+    // }
     .container{
         width: 80%;
         margin: 0 auto;
@@ -32,14 +32,20 @@ body{
         .hero-sub-info{
             display: flex;
             font-size: 14px;
-            font-weight: 900;
+            font-weight: 700;
             transform: translate(-1.6em,1em);
+
+            p{
+                font-size: 15px;
+                font-weight: 500;
+            }
         }
 
         .hero-title{
             text-align: left;
             line-height: 1.3em;
             margin-bottom: 1em;
+            font-weight: 700;
         }
 
         .main-info{
@@ -65,8 +71,8 @@ body{
                 border: 1px solid hsl(0, 59%, 55%);
     
                 p{ 
-                    font-size: 13px;
-                    font-weight: 900;
+                    font-size: 18px;
+                    font-weight: 700;
                 }
             }
 
@@ -81,3 +87,12 @@ body{
     }
 }
 
+/*fluid container medea query for larger screen*/
+@media screen and (min-width:81rem) {
+
+    .fluid-container{
+        width: 1296px;
+        margin: 0 auto;
+    }
+    
+} 

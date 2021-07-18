@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@300;400;600&family=Encode+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@700&family=Source+Serif+Pro:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@300;400;600&family=Encode+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&family=Source+Serif+Pro:wght@600&display=swap");
+.sans-serif {
+  font-family: 'Encode Sans', sans-serif;
+}
+
 :root {
   --background-color:hsl(43, 90%, 94%);
   --primary-color:#DC4E4D;
@@ -26,11 +32,7 @@ body a {
 }
 
 body .serif {
-  font-family: serif, Arial, Helvetica;
-}
-
-body .sans-serif {
-  font-family: sans-serif, Arial, Helvetica;
+  font-family: 'IBM Plex Serif', serif;
 }
 
 body .primary-color, body .active {
@@ -48,10 +50,6 @@ body #icon {
 /*=============================
 utility classes applicable for all device
         ================================*/
-body .hide-mobile {
-  display: none;
-}
-
 body .container {
   width: 80%;
   margin: 0 auto;
@@ -80,15 +78,21 @@ body .hero .hero-sub-info {
   display: -ms-flexbox;
   display: flex;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 700;
   -webkit-transform: translate(-1.6em, 1em);
           transform: translate(-1.6em, 1em);
+}
+
+body .hero .hero-sub-info p {
+  font-size: 15px;
+  font-weight: 500;
 }
 
 body .hero .hero-title {
   text-align: left;
   line-height: 1.3em;
   margin-bottom: 1em;
+  font-weight: 700;
 }
 
 body .hero .main-info {
@@ -118,8 +122,8 @@ body .hero .hero-btn .hero-cta {
 }
 
 body .hero .hero-btn .hero-cta p {
-  font-size: 13px;
-  font-weight: 900;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 body .hero .hero-btn .hero-cta-talk {
@@ -128,5 +132,13 @@ body .hero .hero-btn .hero-cta-talk {
 
 body .hero .hero-btn .hero-cta-work {
   background-color: var(--secondery-color, black);
+}
+
+/*fluid container medea query for larger screen*/
+@media screen and (min-width: 81rem) {
+  .fluid-container {
+    width: 1296px;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=main.css.map */

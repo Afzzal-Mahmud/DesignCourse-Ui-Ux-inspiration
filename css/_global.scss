@@ -1,3 +1,12 @@
+//serif fonts
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@300;400;600&family=Encode+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@700&family=Source+Serif+Pro:wght@600&display=swap');
+// sens-serif
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@300;400;600&family=Encode+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&family=Source+Serif+Pro:wght@600&display=swap');
+// all fonts where use sans-serit font
+.sans-serif{
+    font-family: 'Encode Sans', sans-serif;
+}
+//all color 
 :root{
     --background-color:hsl(43, 90%, 94%);
     --primary-color:#DC4E4D;
@@ -9,7 +18,7 @@
 *{
     box-sizing: border-box
 }
-
+// font-family: 'Source Serif Pro', serif;
 body{
     margin: 0;
     padding: 0;
@@ -25,12 +34,9 @@ body{
     background: var(--background-color,#e5ffe7);
     // all fonts where use serit font
     .serif{
-        font-family: serif, Arial, Helvetica;   
+        font-family: 'IBM Plex Serif', serif;  
     }
-    // all fonts where use sans-serit font
-    .sans-serif{
-        font-family: sans-serif, Arial, Helvetica;
-    }
+    
     .primary-color,.active{
         color: var(--primary-color);
     }
