@@ -5,9 +5,10 @@ utility classes applicable for all device
         ================================*/
 
 body{
-    // .hide-mobile{
-    //     display: none;
-    // }
+    /*image are hide in mobile devices*/ 
+    .hide-mobile{
+        display: none;
+    }
     .container{
         width: 80%;
         margin: 0 auto;
@@ -16,6 +17,31 @@ body{
     //this flow class help us to margin the direct child except first child
     .flow >*+*{
         margin-top: 1em !important;
+    }
+    /*============cta default is the default style for
+                    all button and .hero-cta use for hero section============*/ 
+
+    .cta-default,.hero-cta{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        cursor: pointer; 
+        padding: .1em 1.2em; 
+        border: 1px solid hsl(0, 59%, 55%);
+
+        p{ 
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+
+    /*title default is the default style of all title and*/ 
+
+    .title-default,.hero-title{
+        text-align: left;
+        line-height: 1.3em;
+        font-weight: 700;
     }
 }
 
@@ -42,10 +68,7 @@ body{
         }
 
         .hero-title{
-            text-align: left;
-            line-height: 1.3em;
             margin-bottom: 1em;
-            font-weight: 700;
         }
 
         .main-info{
@@ -61,26 +84,11 @@ body{
         .hero-btn{
             display: grid;
 
-            .hero-cta{
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                width: 100%;
-                cursor: pointer; 
-                padding: .1em .75em; 
-                border: 1px solid hsl(0, 59%, 55%);
-    
-                p{ 
-                    font-size: 18px;
-                    font-weight: 700;
-                }
-            }
-
             .hero-cta-talk{
                 color: white;
             }
             .hero-cta-work{
-                background-color: var(--secondery-color,black);
+                background-color: var(--secondery-color,#a83838);
             }
             
         }

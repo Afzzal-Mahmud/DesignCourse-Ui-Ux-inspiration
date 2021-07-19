@@ -50,6 +50,17 @@ body #icon {
 /*=============================
 utility classes applicable for all device
         ================================*/
+body {
+  /*image are hide in mobile devices*/
+  /*============cta default is the default style for
+                    all button and .hero-cta use for hero section============*/
+  /*title default is the default style of all title and*/
+}
+
+body .hide-mobile {
+  display: none;
+}
+
 body .container {
   width: 80%;
   margin: 0 auto;
@@ -58,6 +69,32 @@ body .container {
 
 body .flow > * + * {
   margin-top: 1em !important;
+}
+
+body .cta-default, body .hero-cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  cursor: pointer;
+  padding: .1em 1.2em;
+  border: 1px solid #d04949;
+}
+
+body .cta-default p, body .hero-cta p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+body .title-default, body .hero-title {
+  text-align: left;
+  line-height: 1.3em;
+  font-weight: 700;
 }
 
 /*========================
@@ -89,10 +126,7 @@ body .hero .hero-sub-info p {
 }
 
 body .hero .hero-title {
-  text-align: left;
-  line-height: 1.3em;
   margin-bottom: 1em;
-  font-weight: 700;
 }
 
 body .hero .main-info {
@@ -106,32 +140,12 @@ body .hero .hero-btn {
   display: grid;
 }
 
-body .hero .hero-btn .hero-cta {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 100%;
-  cursor: pointer;
-  padding: .1em .75em;
-  border: 1px solid #d04949;
-}
-
-body .hero .hero-btn .hero-cta p {
-  font-size: 18px;
-  font-weight: 700;
-}
-
 body .hero .hero-btn .hero-cta-talk {
   color: white;
 }
 
 body .hero .hero-btn .hero-cta-work {
-  background-color: var(--secondery-color, black);
+  background-color: var(--secondery-color, #a83838);
 }
 
 /*fluid container medea query for larger screen*/
