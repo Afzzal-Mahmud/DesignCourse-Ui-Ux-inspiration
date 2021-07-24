@@ -11,7 +11,7 @@
     --background-color:hsl(43, 90%, 94%);
     --primary-color:#DC4E4D;
     --secondery-color:#EAE5D2;
-    --dark:hsl(43, 90%, 3%);
+    --dark:#262626;
 }
 //hero right columns hide for mobile view only
 
@@ -19,19 +19,23 @@
     box-sizing: border-box
 }
 // font-family: 'Source Serif Pro', serif;
-body{
-    margin: 0;
-    padding: 0;
+
+ body{
+     margin: 0;
+     background-color: #fff9e9;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+ }
 
     ul{
         list-style: none;
     }
     a{
         text-decoration: none;
-        color: var(--dark,black);
+        color: var(--dark,rgb(12, 12, 12));
     }
 
-    background: var(--background-color,#e5ffe7);
+
     // all fonts where use serit font
     .serif{
         font-family: 'IBM Plex Serif', serif;  
@@ -40,6 +44,7 @@ body{
     .primary-color,.active{
         color: var(--primary-color);
     }
+    .active{font-weight: 700;}
     .primary-background{
         background-color: var(--primary-color);
     }
@@ -47,5 +52,5 @@ body{
     #icon{
         width: 25px;
     }
-}
+
 

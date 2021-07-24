@@ -8,7 +8,7 @@
   --background-color:hsl(43, 90%, 94%);
   --primary-color:#DC4E4D;
   --secondery-color:#EAE5D2;
-  --dark:hsl(43, 90%, 3%);
+  --dark:#262626;
 }
 
 * {
@@ -18,60 +18,73 @@
 
 body {
   margin: 0;
-  padding: 0;
-  background: var(--background-color, #e5ffe7);
+  background-color: #fff9e9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body ul {
+ul {
   list-style: none;
 }
 
-body a {
+a {
   text-decoration: none;
-  color: var(--dark, black);
+  color: var(--dark, #0c0c0c);
 }
 
-body .serif {
+.serif {
   font-family: 'IBM Plex Serif', serif;
 }
 
-body .primary-color, body .active {
+.primary-color, .active {
   color: var(--primary-color);
 }
 
-body .primary-background {
+.active {
+  font-weight: 700;
+}
+
+.primary-background {
   background-color: var(--primary-color);
 }
 
-body #icon {
+#icon {
   width: 25px;
 }
 
 /*=============================
 utility classes applicable for all device
         ================================*/
-body {
-  /*image are hide in mobile devices*/
-  /*============cta default is the default style for
-                    all button and .hero-cta use for hero section============*/
-  /*title default is the default style of all title and*/
-}
-
-body .hide-mobile {
+/*=========================================
+    image are hide in mobile devices visibal at 768px
+            ===========================================*/
+.hide-mobile {
   display: none;
 }
 
-body .container {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
+.show-tab {
+  display: none;
 }
 
-body .flow > * + * {
+/* visibal at 1024 px */
+.show-lg {
+  display: none;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.flow > * + * {
   margin-top: 1em !important;
 }
 
-body .cta-default, body .hero-cta {
+/*============
+    cta default is the default style for
+    all button and .hero-cta use for hero section
+                                     ============*/
+.cta-default, .hero-cta {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,37 +93,40 @@ body .cta-default, body .hero-cta {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 100%;
   cursor: pointer;
   padding: .1em 1.2em;
   border: 1px solid #d04949;
 }
 
-body .cta-default p, body .hero-cta p {
-  font-size: 18px;
+.cta-default p, .hero-cta p {
+  font-size: 16px;
   font-weight: 700;
 }
 
-body .title-default, body .hero-title {
-  text-align: left;
+/*title default is the default style of all title and*/
+.title-default, .hero-title {
   line-height: 1.3em;
   font-weight: 700;
 }
 
 /*========================
-starting with mobile first development
+starting with hero section mobile first development
             ============================*/
-body .logo {
+section {
+  background: var(--background-color, #e5ffe7);
+}
+
+header .logo {
   text-align: left;
 }
 
-body .hero {
+.hero {
   /*==========
     hero section btn style
                 ==========*/
 }
 
-body .hero .hero-sub-info {
+.hero .hero-sub-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,40 +134,202 @@ body .hero .hero-sub-info {
   font-weight: 700;
   -webkit-transform: translate(-1.6em, 1em);
           transform: translate(-1.6em, 1em);
+  color: #4a4a4a;
 }
 
-body .hero .hero-sub-info p {
+.hero .hero-sub-info p {
   font-size: 15px;
   font-weight: 500;
 }
 
-body .hero .hero-title {
+.hero .hero-title {
   margin-bottom: 1em;
 }
 
-body .hero .main-info {
-  text-align: left;
+.hero .main-info {
   line-height: 1.4em;
   margin-bottom: 2.5em;
+  color: var(--dark, #4a4a4a);
 }
 
-body .hero .hero-btn {
+.hero .hero-btn {
   display: -ms-grid;
   display: grid;
 }
 
-body .hero .hero-btn .hero-cta-talk {
+.hero .hero-btn .hero-cta-talk {
   color: white;
 }
 
-body .hero .hero-btn .hero-cta-work {
+.hero .hero-btn .hero-cta-work {
   background-color: var(--secondery-color, #a83838);
 }
 
+/*start hero section responsive*/
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  header .container {
+    padding: 0 10%;
+  }
+  .hero .container {
+    padding: 0 10%;
+  }
+  .hero .container .hero-title {
+    max-width: 27ch;
+  }
+  .hero .container .main-info {
+    line-height: 1.4em;
+    margin: 3em 0em 1.5em 0em;
+    max-width: 41ch;
+  }
+}
+
+/* button are on a grid item for next all higher screen */
+@media screen and (min-width: 500px) {
+  .hero-btn {
+    -ms-grid-columns: 180px 180px;
+        grid-template-columns: 180px 180px;
+  }
+  .hero-btn a {
+    padding: 0em .4em;
+  }
+  .hero-btn .hero-cta-talk {
+    margin: 1em 1em 0 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /*show all hidden feature on tab which is none in mobile device */
+  .hide-mobile {
+    display: block;
+  }
+  header {
+    background-color: var(--background-color, #e5ffe7);
+  }
+  header .container {
+    -webkit-transform: translateY(1em);
+            transform: translateY(1em);
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav .logo {
+    -webkit-transform: translateX(-28%);
+            transform: translateX(-28%);
+  }
+  nav .primary-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 50%;
+  }
+  section.hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .hero-left-col {
+    -webkit-transform: translateY(4em);
+            transform: translateY(4em);
+  }
+  .hero-left-col .hero-sub-info {
+    margin-bottom: 3.5em;
+  }
+  .hero-left-col .hero-title {
+    line-height: 1.5em;
+    margin-bottom: 1.3em;
+  }
+  .hero-left-col .main-info {
+    margin-bottom: 2.8em;
+  }
+  .hero-right-col {
+    position: relative;
+  }
+  .hero-right-col .hero-bg-box {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
+  .hero-right-col #hero-bg-img {
+    -webkit-transform: translateY(3.65em);
+            transform: translateY(3.65em);
+  }
+}
+
+/*show my name on this brackpoint*/
+@media screen and (min-width: 870px) {
+  .show-tab {
+    display: inline-block;
+  }
+}
+
+/*at 1024px*/
+@media screen and (min-width: 1024px) {
+  .show-tab {
+    display: inline-block;
+  }
+  .show-lg {
+    display: inline-block;
+  }
+  .container {
+    width: 70%;
+  }
+  nav .logo {
+    -webkit-transform: translateX(-43%);
+            transform: translateX(-43%);
+  }
+  nav .primary-nav {
+    -webkit-transform: translateX(15%);
+            transform: translateX(15%);
+  }
+  .hero-left-col {
+    position: relative;
+  }
+  .hero-left-col::before {
+    content: "";
+    height: 170px;
+    background: var(--secondery-color, #3d3c3c);
+    position: absolute;
+    left: 0;
+    top: 23.5%;
+    width: 12%;
+  }
+  .hero-right-col {
+    position: relative;
+  }
+  .hero-right-col::before {
+    content: "";
+    height: 170px;
+    background: var(--secondery-color, #3d3c3c);
+    position: absolute;
+    right: 0;
+    top: 37%;
+    width: 100%;
+  }
+  .hero-right-col::after {
+    content: url(../images/dots.svg);
+    position: absolute;
+    right: 67%;
+    top: 53%;
+    z-index: 2;
+  }
+}
+
 /*fluid container medea query for larger screen*/
-@media screen and (min-width: 81rem) {
+@media screen and (min-width: 73.125rem) {
   .fluid-container {
-    width: 1296px;
+    width: 1170px;
     margin: 0 auto;
   }
 }

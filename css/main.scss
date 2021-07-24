@@ -4,34 +4,39 @@
 utility classes applicable for all device
         ================================*/
 
-body{
-    /*image are hide in mobile devices*/ 
+
+    /*=========================================
+    image are hide in mobile devices visibal at 768px
+            ===========================================*/
     .hide-mobile{
         display: none;
     }
+    .show-tab{display: none}
+    /* visibal at 1024 px */
+    .show-lg{display: none}
     .container{
         width: 80%;
         margin: 0 auto;
-        text-align: center;
     }
     //this flow class help us to margin the direct child except first child
     .flow >*+*{
         margin-top: 1em !important;
     }
-    /*============cta default is the default style for
-                    all button and .hero-cta use for hero section============*/ 
+    /*============
+    cta default is the default style for
+    all button and .hero-cta use for hero section
+                                     ============*/ 
 
     .cta-default,.hero-cta{
         display: flex;
         align-items: center;
         justify-content: space-around;
-        width: 100%;
         cursor: pointer; 
         padding: .1em 1.2em; 
         border: 1px solid hsl(0, 59%, 55%);
 
         p{ 
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
         }
     }
@@ -39,67 +44,201 @@ body{
     /*title default is the default style of all title and*/ 
 
     .title-default,.hero-title{
-        text-align: left;
         line-height: 1.3em;
         font-weight: 700;
     }
-}
+
 
 /*========================
-starting with mobile first development
+starting with hero section mobile first development
             ============================*/
 
-body{
+section{
+    background: var(--background-color,#e5ffe7);
+}
+
+header{
     .logo{
         text-align: left;
     }
-    .hero{
+}
 
-        .hero-sub-info{
-            display: flex;
-            font-size: 14px;
-            font-weight: 700;
-            transform: translate(-1.6em,1em);
 
-            p{
-                font-size: 15px;
-                font-weight: 500;
-            }
+.hero{
+    .hero-sub-info{
+        display: flex;
+        font-size: 14px;
+        font-weight: 700;
+        transform: translate(-1.6em,1em);
+        color: #4a4a4a;
+
+        p{
+            font-size: 15px;
+            font-weight: 500;
         }
+    }
 
-        .hero-title{
-            margin-bottom: 1em;
-        }
+    .hero-title{
+        margin-bottom: 1em;
+    }
 
-        .main-info{
-            text-align: left;
-            line-height: 1.4em;
-            margin-bottom: 2.5em;
-        }
-        
-
+    .main-info{
+        line-height: 1.4em;
+        margin-bottom: 2.5em;
+        color: var(--dark,#4a4a4a);
+    }
+    
+    
     /*==========
     hero section btn style
                 ==========*/
-        .hero-btn{
-            display: grid;
+    .hero-btn{
+        display: grid;
 
-            .hero-cta-talk{
-                color: white;
-            }
-            .hero-cta-work{
-                background-color: var(--secondery-color,#a83838);
-            }
-            
+        .hero-cta-talk{
+            color: white;
         }
+        .hero-cta-work{
+            background-color: var(--secondery-color,#a83838);
+        }
+        
     }
 }
 
+/*start hero section responsive*/ 
+@media screen and (min-width:500px) and (max-width:767px) {
+    
+        header{
+            .container{padding: 0 10%}
+        }
+    .hero{
+        .container{
+
+            padding: 0 10%;
+            .hero-title{max-width: 27ch;}
+            .main-info{
+                line-height: 1.4em;
+                margin: 3em 0em 1.5em 0em;
+                max-width: 41ch;
+                }
+         } 
+      }
+    
+} 
+/* button are on a grid item for next all higher screen */ 
+@media screen and (min-width:500px){
+    .hero-btn{
+        grid-template-columns: 180px 180px;
+       
+        a{ padding: 0em .4em }
+        .hero-cta-talk{margin: 1em 1em 0 0}
+
+        }
+    }
+
+@media screen and (min-width:768px){
+    /*show all hidden feature on tab which is none in mobile device */ 
+        .hide-mobile{display: block}
+        header{
+            background-color: var(--background-color,#e5ffe7);
+            .container{transform: translateY(1em);}
+        }
+    nav{
+        .logo{transform: translateX(-28%)}
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .primary-nav{
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+        }
+    }
+
+     section.hero{display: flex;} 
+     .hero-left-col{
+         transform: translateY(4em);
+
+         .hero-sub-info{margin-bottom: 3.5em}
+         .hero-title{
+             line-height: 1.5em;
+             margin-bottom: 1.3em
+        }
+         .main-info{margin-bottom: 2.8em;}
+     }
+     .hero-right-col{
+         position: relative;
+
+         .hero-bg-box{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+         }
+
+         #hero-bg-img{transform: translateY(3.65em)}
+     }
+}   
+/*show my name on this brackpoint*/ 
+@media screen and (min-width:870px) {
+    .show-tab{display: inline-block}
+
+}
+
+/*at 1024px*/
+
+@media screen and (min-width:1024px) {
+    .show-tab{display: inline-block}
+    .show-lg{display: inline-block}
+    .container{width: 70%}
+    nav{
+        .logo{transform: translateX(-43%)}
+        .primary-nav{transform: translateX(15%)}
+    }
+    .hero-left-col{
+        position: relative;
+
+        &::before{
+            content: "";
+            height: 170px;
+            background: var(--secondery-color, #3d3c3c);
+            position: absolute;
+            left: 0;
+            top: 23.5%;
+            width: 12%;
+        }
+    }
+    .hero-right-col{
+        position: relative;
+
+        &::before{
+            content: "";
+            height: 170px;
+            background: var(--secondery-color, #3d3c3c);
+            position: absolute;
+            right: 0;
+            top: 37%;
+            width: 100%;
+        }
+        &::after{
+            content: url(../images/dots.svg);
+            position: absolute;
+            right: 67%;
+            top: 53%;
+            z-index: 2;
+        }
+    }
+    
+    
+}
+
 /*fluid container medea query for larger screen*/
-@media screen and (min-width:81rem) {
+@media screen and (min-width:73.125rem) {
 
     .fluid-container{
-        width: 1296px;
+        width: 1170px;
         margin: 0 auto;
     }
     
